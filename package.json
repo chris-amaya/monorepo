@@ -1,0 +1,27 @@
+{
+  "name": "monorepo",
+  "version": "0.0.1",
+  "main": "index.js",
+  "author": "Christian Eduardo Amaya Rivas",
+  "license": "MIT",
+  "private": true,
+  "workspaces": {
+    "packages": [
+      "packages/*"
+    ]
+  },
+  "scripts": {
+    "backend:start": "yarn workspace @my-app/backend start",
+    "backend:dev": "yarn workspace @my-app/backend dev",
+    "backend:build": "yarn workspace @my-app/backend build",
+    "backend:test": "yarn workspace @my-app/backend test",
+    "frontend:start": "yarn workspace @my-app/frontend start",
+    "reset": "npx rimraf ./**/node_modules yarn.lock",
+    "prettier": "prettier --ignore-path .gitignore \"**/*.+(ts|tsx)\" --write"
+  },
+  "devDependencies": {
+    "prettier": "^2.5.0",
+    "typescript": "^4.5.2",
+    "rimraf": "^3.0.2"
+  }
+}
